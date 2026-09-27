@@ -1,0 +1,60 @@
+{
+  "name": "Central & Stores",
+  "short_name": "Central & Stores",
+  "description": "Trusted grocery and department store in Mangalam, Tiruppur. Browse products online and order easily through WhatsApp.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fafafa",
+  "theme_color": "#d8a100",
+  "lang": "en-IN",
+  "dir": "ltr",
+  "categories": ["shopping", "food", "business"],
+  "icons": [
+    {
+      "src": "favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "All Products",
+      "short_name": "Products",
+      "description": "Browse the full grocery catalogue",
+      "url": "/products.html"
+    },
+    {
+      "name": "My Cart",
+      "short_name": "Cart",
+      "description": "Review your order enquiry cart",
+      "url": "/cart.html"
+    }
+  ]
+}
