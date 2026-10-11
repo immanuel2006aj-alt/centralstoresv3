@@ -1,0 +1,39 @@
+# ============================================================
+# robots.txt — Central & Stores
+# ------------------------------------------------------------
+# Allows Google, Bing, and other search engines to crawl the
+# public site. Blocks utility pages that should not be indexed.
+#
+# Sitemap references at the bottom help search engines find
+# every indexable page.
+#
+# No crawl-delay is set. Google and Bing honour their own rate
+# limits and both ignore non-standard crawl-delay for large
+# crawlers. Setting it slows indexing for no benefit.
+# ============================================================
+
+User-agent: *
+Allow: /
+
+# Utility pages — not for search results
+Disallow: /cart.html
+Disallow: /checkout.html
+Disallow: /order-success.html
+Disallow: /*?category=
+Disallow: /*?q=
+Disallow: /*?search=
+
+# Block admin and internal endpoints
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_private/
+
+# Block session-specific or tracking URLs
+Disallow: /*?utm_
+Disallow: /*?fbclid=
+Disallow: /*?gclid=
+Disallow: /*?ref=
+
+# Sitemaps — full URLs, both hosts
+Sitemap: https://www.central-and-stores.ct.ws/sitemap.xml
+Sitemap: https://immanuel2006aj-alt.github.io/centralstoresv3/sitemap.xml
