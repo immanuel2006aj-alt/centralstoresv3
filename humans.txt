@@ -1,0 +1,24 @@
+/* ============================================================
+   HUMANS.TXT — Central & Stores
+   ============================================================
+   Standard: https://humanstxt.org/
+   ============================================================ */
+
+/* TEAM */
+Owner: Ahmed
+Contact: centralstorezmangalam@gmail.com
+Phone: +91 93446 21645
+Location: Mangalam, Tiruppur, Tamil Nadu, India
+
+/* SITE */
+Last update: 2026-10-13
+Language: English, Tamil
+Doctype: HTML5
+IDE: VS Code, Termux
+Standards: HTML5, CSS3, ES2020, WAI-ARIA
+Components: Supabase, GitHub Pages, Cloudflare DNS, InfinityFree
+Software: Vanilla JavaScript, PHP 8.x
+
+/* THANKS */
+Thanks to every customer who shops with Central & Stores.
+Thanks to the local Mangalam community for 4.4★ support.
