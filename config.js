@@ -12,10 +12,10 @@
    Every public page must read phone / WhatsApp / address /
    hours from here. Nothing is hard-coded in HTML.
 
-   HOW TO UPDATE THE PHONE NUMBER
-     1. Change store.phone.e164 below.
-     2. Every "Call" / "WhatsApp" link on every page follows.
-     3. No HTML file needs to be touched.
+   SEO NOTES
+     siteUrl and logoUrl are non-www because the canonical
+     host is https://central-and-stores.ct.ws (no www).
+     The server 301-redirects www.* → non-www.
    ============================================================ */
 
 (function () {
@@ -49,49 +49,44 @@
 
     /* ----------------------------------------------------
        Address
-       street is currently a Plus Code. Replace with the
-       real street line when available.
     ---------------------------------------------------- */
     address: {
-      street:      '473C+3W6',
+      street:      '1/90 C Tirupur Main Road',
       locality:    'Mangalam',
       region:      'Tamil Nadu',
       postalCode:  '641663',
       country:     'IN',
-      countryName: 'India'
+      countryName: 'India',
+      plusCode:    '473C+3W6'
     },
 
     /* ----------------------------------------------------
-       Map — leave empty until a real link exists.
-       Nothing in the UI will render a "View map" button
-       while this is empty.
+       Map — canonical Google Business Profile link.
+       Used in schema sameAs, GBP deep-links, and CTA buttons.
     ---------------------------------------------------- */
-    mapsUrl: '',
+    mapsUrl: 'https://maps.app.goo.gl/sSM66eeLdxad84Sq5',
 
     /* ----------------------------------------------------
        Hours
-       Format follows schema.org openingHours.
-       Friday intentionally not listed (matches existing
-       structured data). Add ',Fr 08:00-22:00' to include.
     ---------------------------------------------------- */
     openingHours: {
-      schema:    'Mo-Th,Sa-Su 08:00-22:00',
-      display:   'Mon–Thu, Sat–Sun · 8:00 AM – 10:00 PM',
-      timezone:  'Asia/Kolkata'
+      schema:   'Mo-Th,Sa-Su 08:00-22:00',
+      display:  'Mon–Thu, Sat–Sun · 8:00 AM – 10:00 PM',
+      timezone: 'Asia/Kolkata'
     },
 
     /* ----------------------------------------------------
-       Locale / currency — used by price and date formatters
+       Locale / currency
     ---------------------------------------------------- */
-    locale:   'en-IN',
-    currency: 'INR',
+    locale:         'en-IN',
+    currency:       'INR',
     currencySymbol: '₹',
 
     /* ----------------------------------------------------
-       Canonical / SEO
+       Canonical / SEO — non-www
     ---------------------------------------------------- */
-    siteUrl: 'https://www.central-and-stores.ct.ws/',
-    logoUrl: 'https://www.central-and-stores.ct.ws/logo.png'
+    siteUrl: 'https://central-and-stores.ct.ws',
+    logoUrl: 'https://central-and-stores.ct.ws/logo.png'
   };
 
   /* Freeze top-level to prevent accidental mutation at runtime. */
@@ -108,40 +103,27 @@
      concatenation. Guarantees consistent URL encoding.
   ---------------------------------------------------- */
 
-  /**
-   * Build a tel: link from STORE_CONFIG.phone.e164.
-   * @returns {string}
-   */
   window.storeTelLink = function () {
     return 'tel:' + STORE_CONFIG.phone.e164;
   };
 
-  /**
-   * Build a wa.me link with an optional pre-filled message.
-   * @param {string} [message] - plain text; will be URL-encoded
-   * @returns {string}
-   */
   window.storeWaLink = function (message) {
     const base = 'https://wa.me/' + STORE_CONFIG.whatsapp.e164.replace(/^\+/, '');
     if (!message) return base;
     return base + '?text=' + encodeURIComponent(message);
   };
 
+  window.storeMapsLink = function () {
+    return STORE_CONFIG.mapsUrl || '';
+  };
+
   /* ----------------------------------------------------
-     Optional: auto-hydrate any element that opts in via
-     data attributes, so plain HTML stays declarative.
+     Auto-hydrate links that opt in via data attributes.
 
        <a data-tel-link>Call Store</a>
        <a data-wa-link>WhatsApp Store</a>
        <a data-wa-link data-wa-message="Hello...">Contact</a>
-
-     This runs once on DOMContentLoaded and is idempotent.
-
-     IMPORTANT COMPATIBILITY NOTE
-       Existing pages already contain hard-coded wa.me URLs
-       with pre-filled ?text=. Those are LEFT UNTOUCHED so
-       no HTML file needs to change. Hydration only fills
-       in links that have NO href yet, or that point to "#".
+       <a data-maps-link>Directions</a>
   ---------------------------------------------------- */
 
   function hydrateLinks() {
@@ -167,6 +149,20 @@
       const rel = (el.getAttribute('rel') || '').split(/\s+/).filter(Boolean);
       if (rel.indexOf('noopener') === -1) rel.push('noopener');
       el.setAttribute('rel', rel.join(' '));
+    });
+
+    document.querySelectorAll('a[data-maps-link]').forEach(function (el) {
+      const href = el.getAttribute('href');
+      if (!href || href === '#' || href.indexOf('maps.app.goo.gl') === -1 && href.indexOf('google.com/maps') === -1) {
+        const url = window.storeMapsLink();
+        if (url) {
+          el.setAttribute('href', url);
+          el.setAttribute('target', '_blank');
+          const rel = (el.getAttribute('rel') || '').split(/\s+/).filter(Boolean);
+          if (rel.indexOf('noopener') === -1) rel.push('noopener');
+          el.setAttribute('rel', rel.join(' '));
+        }
+      }
     });
   }
 
