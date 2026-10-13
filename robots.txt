@@ -88,6 +88,9 @@ Allow: /
 Disallow: /cart.html
 Disallow: /checkout.html
 
+# Trust signal files — keep crawlable
+Allow: /security.txt
+Allow: /humans.txt
 # ============================================================
 # POLITE CRAWLERS — throttle to protect hosting
 # ============================================================
