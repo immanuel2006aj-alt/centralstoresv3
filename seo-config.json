@@ -1,0 +1,141 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "lastUpdated": "2026-10-13",
+    "purpose": "Centralized SEO metadata for Central & Stores. Read by seo-master.js and the InfinityFree SEO engine.",
+    "canonicalHost": "https://central-and-stores.ct.ws",
+    "siteName": "Central & Stores",
+    "owner": "Ahmed",
+    "phone": "+919344621645",
+    "email": "centralstorezmangalam@gmail.com",
+    "gbpUrl": "https://maps.app.goo.gl/sSM66eeLdxad84Sq5",
+    "locale": "en_IN",
+    "language": "en-IN",
+    "logoUrl": "https://central-and-stores.ct.ws/logo.png"
+  },
+
+  "defaults": {
+    "titlePattern": "{title} | Central & Stores",
+    "descriptionFallback": "Trusted grocery and department store in Mangalam, Tiruppur. Fresh groceries, household items, daily essentials with free same-day home delivery.",
+    "ogImage": "https://central-and-stores.ct.ws/logo.png",
+    "ogImageWidth": 1200,
+    "ogImageHeight": 630,
+    "twitterCard": "summary_large_image",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  },
+
+  "pages": {
+    "/": {
+      "title": "Central & Stores | Grocery & Department Store in Mangalam, Tiruppur",
+      "description": "Central & Stores is a trusted grocery and department store in Mangalam, Tiruppur. Shop groceries, rice, pulses, oils, snacks, beverages, household essentials, personal care, baby care and daily needs. Same-day home delivery.",
+      "keywords": "Central & Stores, Central Stores Mangalam, Grocery Store Mangalam, Supermarket Tiruppur, Department Store Mangalam, Daily Essentials Tiruppur",
+      "ogType": "website",
+      "pageType": "home",
+      "priority": 1.0,
+      "changefreq": "weekly"
+    },
+
+    "/products.html": {
+      "title": "Products | Central & Stores — Groceries & Daily Essentials, Mangalam Tiruppur",
+      "description": "Browse groceries, rice, flour, pulses, oils, snacks and household essentials from Central & Stores. Fresh local delivery in Mangalam, Tiruppur.",
+      "keywords": "grocery products Mangalam, buy groceries Tiruppur, rice pulses oils, snacks, daily essentials, online grocery Tiruppur",
+      "ogType": "website",
+      "pageType": "collection",
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+
+    "/grocery-store-mangalam-tiruppur.html": {
+      "title": "Grocery Store in Mangalam, Tiruppur | Central & Stores",
+      "description": "Central & Stores is a trusted grocery and department store in Mangalam, Tiruppur. Fresh groceries, rice, pulses, oils, snacks, household essentials, and daily needs. Free same-day home delivery within Mangalam.",
+      "keywords": "grocery store Mangalam, supermarket Tiruppur, department store Mangalam, grocery shop near me Tiruppur, Central Stores Tiruppur",
+      "ogType": "website",
+      "pageType": "local-landing",
+      "priority": 0.95,
+      "changefreq": "monthly"
+    },
+
+    "/cart.html": {
+      "title": "My Cart | Central & Stores",
+      "description": "Review your Central & Stores order and place it directly. Our store owner will call to confirm price and delivery.",
+      "robots": "noindex, nofollow, noarchive",
+      "ogType": "website",
+      "pageType": "utility",
+      "priority": 0.0,
+      "changefreq": "never"
+    },
+
+    "/product-details.html": {
+      "title": "Product Details | Central & Stores",
+      "description": "View product details, prices, and availability at Central & Stores, Mangalam, Tiruppur.",
+      "robots": "noindex, follow",
+      "ogType": "product",
+      "pageType": "product-detail",
+      "priority": 0.0,
+      "changefreq": "weekly"
+    },
+
+    "/about.html": {
+      "title": "About Central & Stores | Mangalam, Tiruppur",
+      "description": "Learn about Central & Stores — trusted grocery and department store in Mangalam, Tiruppur, owned by Ahmed.",
+      "ogType": "website",
+      "pageType": "about",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+
+    "/contact.html": {
+      "title": "Contact Central & Stores | Mangalam, Tiruppur",
+      "description": "Contact Central & Stores — phone, WhatsApp, email, and address in Mangalam, Tiruppur.",
+      "ogType": "website",
+      "pageType": "contact",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    }
+  },
+
+  "brand_aliases": [
+    "Central & Stores",
+    "Central and Stores",
+    "Central Stores",
+    "Central Stores Mangalam",
+    "Central Stores Tiruppur",
+    "Central & Stores Mangalam",
+    "சென்ட்ரல் & ஸ்டோர்ஸ்"
+  ],
+
+  "locations_served": [
+    "Mangalam",
+    "Tiruppur",
+    "Avinashi",
+    "Palladam",
+    "Dharapuram",
+    "Kangeyam",
+    "Udumalaipettai",
+    "Velampalayam",
+    "Vellakoil",
+    "Chennimalai"
+  ],
+
+  "categories": [
+    "Rice & Flours",
+    "Pulses & Dals",
+    "Oils & Ghee",
+    "Masalas",
+    "Beverages",
+    "Kitchen Essentials",
+    "Biscuits",
+    "Home Care",
+    "Personal Care",
+    "Baby Care",
+    "Tamil Nadu Snacks"
+  ],
+
+  "tamil_keywords": [
+    "மளிகை கடை மங்களம்",
+    "சூப்பர் மார்க்கெட் திருப்பூர்",
+    "சென்ட்ரல் ஸ்டோர்ஸ்",
+    "மளிகை பொருட்கள்",
+    "வீட்டு டெலிவரி"
+  ]
+}
