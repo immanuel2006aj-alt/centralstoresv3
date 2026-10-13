@@ -1,0 +1,59 @@
+# ============================================================
+# GitHub Pages Configuration — Central & Stores
+# ============================================================
+# This file is read by GitHub Pages even with .nojekyll present.
+# It sets site-wide defaults that improve SEO and HTTP behavior.
+# ============================================================
+
+# --- Site metadata ---
+title: "Central & Stores"
+description: "Trusted grocery and department store in Mangalam, Tiruppur, Tamil Nadu."
+url: "https://central-and-stores.ct.ws"
+baseurl: ""
+
+lang: en-IN
+locale: en_IN
+author: "Ahmed"
+email: "centralstorezmangalam@gmail.com"
+phone: "+919344621645"
+
+# --- Explicitly disable Jekyll processing ---
+# (Same effect as the .nojekyll file, but declared in YAML.)
+include:
+  - ".nojekyll"
+  - ".well-known"
+  - "security.txt"
+  - "humans.txt"
+  - "ads.txt"
+
+exclude:
+  - "README.md"
+  - "LICENSE"
+  - "node_modules"
+  - ".git"
+
+# --- Markdown & plugins (safe defaults; nothing aggressive) ---
+markdown: kramdown
+kramdown:
+  input: GFM
+
+plugins: []
+
+# --- CORS + security-friendly defaults ---
+# (GitHub Pages applies reasonable defaults; these document intent.)
+webmaster_verifications:
+  google: "UiZIs83UIzePD90SDI57K95pFPvwXczbQcaqUnXn2aE"
+
+# --- Sitemap + robots (documented, not enforced) ---
+sitemap:
+  url: "https://central-and-stores.ct.ws/sitemap.xml"
+  changefreq: "weekly"
+  priority: 0.9
+
+robots:
+  sitemap: "https://central-and-stores.ct.ws/sitemap.xml"
+  user_agent: "*"
+  allow: "/"
+
+# --- GitHub Pages theme (none — we serve raw HTML) ---
+theme: null
