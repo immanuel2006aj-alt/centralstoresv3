@@ -1,0 +1,14 @@
+# ============================================================
+# ads.txt — Central & Stores
+# ============================================================
+# Standard: https://iabtechlab.com/ads-txt/
+#
+# If you use Google AdSense, replace pub-0000000000000000
+# with your real publisher ID.
+# ============================================================
+
+google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+
+# If you don't run AdSense or any ad network, DELETE this
+# file entirely. An empty or placeholder ads.txt is worse
+# than no ads.txt.
