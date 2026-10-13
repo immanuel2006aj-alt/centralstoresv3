@@ -1,0 +1,22 @@
+# ============================================================
+# security.txt — Central & Stores
+# ============================================================
+# Standard: https://securitytxt.org/
+# Purpose: give security researchers a way to report issues.
+# ============================================================
+
+Contact: mailto:centralstorezmangalam@gmail.com
+Contact: tel:+919344621645
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en, ta
+Canonical: https://central-and-stores.ct.ws/security.txt
+Policy: https://central-and-stores.ct.ws/privacy.html
+Encryption: https://central-and-stores.ct.ws/pgp-key.txt
+
+# ------------------------------------------------------------
+# Scope: this file applies to all pages served under
+# central-and-stores.ct.ws. Security issues involving the
+# storefront, product catalogue, or checkout flow should be
+# reported to the contact above. Please do not test against
+# customer payment flows or attempt social engineering.
+# ------------------------------------------------------------
