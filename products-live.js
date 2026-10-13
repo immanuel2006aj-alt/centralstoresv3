@@ -6,8 +6,9 @@
      • Populate window.productsData (canonical app shape).
      • Dispatch `productsLoaded` on success, `productsError`
        on failure.
+     • HIDE soft-deleted products (deleted_at IS NULL)
 
-   CONTRACT (product shape — see master prompt §22)
+   CONTRACT (product shape)
      {
        id:                uuid | number
        name:              string
@@ -15,9 +16,9 @@
        weight:            string
        price:             number
        original_price:    number | null
-       offer_percentage:  null           (reserved; not stored)
-       image_url:         string         // canonical
-       image:             string         // legacy alias — same value
+       offer_percentage:  null
+       image_url:         string
+       image:             string
        description:       string
        is_available:      boolean
        is_published:      boolean
@@ -29,15 +30,8 @@
      document: 'productsError'   detail: { message: string }
 
    NO LEGACY SOURCE
-     The hard-coded catalogue (products-name.js / price.js /
-     image-links.js) is intentionally NOT consulted.
+     The hard-coded catalogue is intentionally NOT consulted.
      The database is the only source of truth.
-
-   NOTE ON offer_percentage
-     The public site derives the discount from
-     (original_price - price) / original_price. There is no
-     stored offer_percentage column in the database, and the
-     field is always emitted as null for schema stability.
    ============================================================ */
 
 window.productsData = window.productsData || [];
@@ -100,6 +94,7 @@ window.productsData = window.productsData || [];
 
   /**
    * Run the Supabase query. Rejects on error.
+   * Hides soft-deleted products via .is('deleted_at', null).
    * @returns {Promise<Array>}
    */
   function fetchProducts() {
@@ -111,6 +106,7 @@ window.productsData = window.productsData || [];
       .from('products')
       .select(SELECT_COLUMNS)
       .eq('is_published', true)
+      .is('deleted_at', null)                    // ← HIDE SOFT-DELETED
       .order('is_featured', { ascending: false })
       .order('name',        { ascending: true })
       .limit(RESULT_LIMIT)
