@@ -1,42 +1,30 @@
 # ============================================================
 # robots.txt — Central & Stores
-# Canonical: https://central-and-stores.ct.ws
-# ------------------------------------------------------------
-# Allows Google, Bing, and other search engines to crawl the
-# public site. Blocks utility pages that should not be indexed.
-#
-# The sitemap is generated dynamically by the SEO engine on
-# InfinityFree and lists all programmatic location, category,
-# and product pages — plus the GitHub storefront pages.
-#
-# No crawl-delay is set. Google and Bing honour their own rate
-# limits and both ignore non-standard crawl-delay for large
-# crawlers. Setting it slows indexing for no benefit.
+# Primary domain: https://www.central-and-stores.ct.ws/
 # ============================================================
 
 User-agent: *
 Allow: /
 
-# ---------- Utility pages — not for search results ----------
+# Utility pages — do not crawl
 Disallow: /cart.html
 Disallow: /checkout.html
 Disallow: /order-success.html
 Disallow: /order-confirmation.html
 Disallow: /thank-you.html
+Disallow: /admin/
+Disallow: /admin.html
+Disallow: /api/
+Disallow: /_private/
+Disallow: /.git/
+Disallow: /supabase-config.js
 
-# ---------- Query-string variants — prevent duplicate content ----------
+# Search and tracking URL variants
 Disallow: /*?q=
 Disallow: /*?search=
 Disallow: /*?sort=
 Disallow: /*?filter=
 Disallow: /*?page=
-
-# Allow product/category query strings to still be crawlable
-# (these are legitimately how products are filtered)
-Allow: /products.html?category=
-Allow: /product-details.html?id=
-
-# ---------- Session / tracking parameters — never index ----------
 Disallow: /*?utm_
 Disallow: /*?fbclid=
 Disallow: /*?gclid=
@@ -45,19 +33,11 @@ Disallow: /*?source=
 Disallow: /*?session=
 Disallow: /*?token=
 
-# ---------- Admin + internal endpoints — never index ----------
-Disallow: /admin/
-Disallow: /admin.html
-Disallow: /api/
-Disallow: /_private/
-Disallow: /.git/
-Disallow: /supabase-config.js
-Disallow: /service-worker.js
-Disallow: /sw.js
+# Allow useful product URLs
+Allow: /products.html?category=
+Allow: /product-details.html?id=
 
-# ============================================================
-# GOOGLEBOT
-# ============================================================
+# Google
 User-agent: Googlebot
 Allow: /
 Disallow: /cart.html
@@ -71,83 +51,18 @@ Allow: /assets/
 Allow: /images/
 Allow: /uploads/
 
-# ============================================================
-# BING (feeds ChatGPT + Copilot + DuckDuckGo)
-# ============================================================
+# Bing
 User-agent: Bingbot
 Allow: /
 Disallow: /cart.html
 Disallow: /checkout.html
 Disallow: /order-success.html
 
-# ============================================================
-# YANDEX
-# ============================================================
+# Yandex
 User-agent: YandexBot
 Allow: /
 Disallow: /cart.html
 Disallow: /checkout.html
 
-# Trust signal files — keep crawlable
-Allow: /security.txt
-Allow: /humans.txt
-# ============================================================
-# POLITE CRAWLERS — throttle to protect hosting
-# ============================================================
-User-agent: AhrefsBot
-Crawl-delay: 10
-
-User-agent: SemrushBot
-Crawl-delay: 10
-
-User-agent: MJ12bot
-Crawl-delay: 10
-
-User-agent: DotBot
-Crawl-delay: 10
-
-User-agent: PetalBot
-Crawl-delay: 5
-
-# ============================================================
-# AI CRAWLERS — allow (free distribution + citations)
-# ============================================================
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-# ============================================================
-# BLOCK SPAM / SCRAPERS
-# ============================================================
-User-agent: SemrushBot-SA
-Disallow: /
-
-User-agent: Bytespider
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
-User-agent: DataForSeoBot
-Crawl-delay: 10
-
-# ============================================================
-# SITEMAPS
-# ------------------------------------------------------------
-# The InfinityFree SEO engine generates the primary sitemap.
-# It includes: homepage, /products.html, /grocery-store-
-# mangalam-tiruppur.html, plus 5,500+ programmatic location,
-# category, and product pages.
-# ============================================================
-Sitemap: https://central-and-stores.ct.ws/sitemap.xml
+# Sitemap
+Sitemap: https://www.central-and-stores.ct.ws/sitemap.xml
