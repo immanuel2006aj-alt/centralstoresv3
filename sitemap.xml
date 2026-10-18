@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Sitemap Index — Central & Stores
-  Canonical: https://central-and-stores.ct.ws
+  Canonical: https://www.central-and-stores.ct.ws
 
   The authoritative sitemap is generated dynamically by the
   SEO engine on InfinityFree at /sitemap.xml. It contains:
@@ -20,7 +20,7 @@
 -->
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
-    <loc>https://central-and-stores.ct.ws/sitemap.xml</loc>
+    <loc>https://www.central-and-stores.ct.ws/sitemap.xml</loc>
     <lastmod>2026-10-13</lastmod>
   </sitemap>
 </sitemapindex>
